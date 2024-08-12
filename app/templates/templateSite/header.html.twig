@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<header>
+    {% block header %}
+        <div class="topHeader">
+            <div class="topHeaderInfo">
+                <div class="topHeaderInfoCol3">
+                    <img src="assets/img/users.svg" alt="234 567 876 Пользователей">
+                    <strong>234 567 876</strong>
+                    <span>Пользователей</span>
+                </div>
+                <div class="topHeaderInfoCol3">
+                    <img src="assets/img/wifi.svg" alt="234 567 876 Игроков онлайн">
+                    <strong>234 567 876</strong>
+                    <span>Игроков онлайн</span>
+                </div>
+                <div class="topHeaderInfoCol3">
+                    <img src="assets/img/chest.svg" alt="234 567 876 Кейсы">
+                    <strong>234 567 876</strong>
+                    <span>Кейсы</span>
+                </div>
+            </div>
+            <div class="topHeaderSocial">
+                <ul>
+                    <li><a href="/app/public"><img src="assets/img/tik-tok.svg" alt="TikTok"></a></li>
+                    <li><a href="/app/public"><img src="assets/img/steam.svg" alt="Steam"></a></li>
+                    <li><a href="/app/public"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
+                    <li><a href="/app/public"><img src="assets/img/telegram.svg" alt="Telegram"></a></li>
+                    <li><a href="/app/public"><img src="assets/img/vk.svg" alt="Vk"></a></li>
+                    <li><a href="/app/public"><img src="assets/img/instagram.svg" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="bannerLeft">
+                <span class="bannerSign">
+                    <img class="bannerSignPic" src="assets/img/percent.svg" alt="Неделя ловушек 45%">
+                </span>
+                <h5>Неделя ловушек 45%</h5>
+            </div>
+            <div class="bannerHot">
+                <span class="bannerSign bannerSignBlue">
+                    <img class="bannerSignPic" src="assets/img/clock.svg" alt="Горячий розыгрыш!">
+                </span>
+                <h5>Горячий розыгрыш!</h5>
+                <div class="timer">
+                    <span>02</span>
+                    <span>14</span>
+                    <span>34</span>
+                    <span>03</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigationPanel">
+            <div class="navigationPanelCol">
+                <div class="navigationPanelSearch">
+                    <input type="search" placeholder="Название кейса">
+                </div>
+                <div class="navigationPanelFilter">
+                    <button class="navigationPanelFilterBtn active">1-20 ₽</button>
+                    <button class="navigationPanelFilterBtn">20-60 ₽</button>
+                    <button class="navigationPanelFilterBtn">60-80 ₽</button>
+                    <button class="navigationPanelFilterBtn">100+ ₽</button>
+                </div>
+            </div>
+            <div class="navigationPanelCol navigationPanelRight">
+                <a href="/app/public" class="navigationPanelGames">
+                    <img src="assets/img/games.svg" alt="Игры">
+                    Игры
+                </a>
+                <a href="wheelOfFortune.html.twig" class="navigationPanelGames">
+                    <img src="assets/img/lottery.svg" alt="Колесо удачи">
+                    Колесо удачи
+                </a>
+                <ul class="navigationPanelLang">
+                    <li><a class="active" href="/app/public">RU</a></li>
+                    <li><a href="/app/public">EN</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+</header>
+</body>
+</html>

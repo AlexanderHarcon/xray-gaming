@@ -1,0 +1,12 @@
+/* mixins */
+$browser-context: 16; // default font size
+
+// px to em
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+// px to rem
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}

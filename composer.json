@@ -1,9 +1,11 @@
 {
   "require": {
     "symfony/webpack-encore-bundle": "^1.14",
-    "symfony/orm-pack": "^2.4"
+    "symfony/orm-pack": "^2.4",
+    "symfony/asset": "^6.4"
   },
   "require-dev": {
-    "symfony/maker-bundle": "^1.60"
+    "symfony/maker-bundle": "^1.60",
+    "phpstan/phpstan": "^1.0"
   }
 }

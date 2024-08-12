@@ -1,0 +1,1081 @@
+@import "mixins", "vars";
+
+@media (max-width: 1853px) {
+  .balance {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1800px) {
+  .topHeaderInfoCol3 {
+    margin-right: 50px;
+  }
+  ¸
+  .navigationPanelSearch {
+    padding-right: 0;
+  }
+
+  .navigationPanelFilter {
+    width: 50%;
+  }
+
+  .contentProductsItem {
+    margin: {
+      left: 25px;
+      right: 25px;
+    }
+  }
+
+  .bottomFooterPayments a img {
+    margin: {
+      left: 10px;
+      right: 10px;
+    }
+  }
+
+  .faqBeginWith p {
+    width: 165px;
+    margin: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+
+  .faqQuestionsSupport {
+    padding-left: 30px;
+  }
+
+  .aboutUsCol {
+    flex: 0 0 45%;
+    max-width: 45%;
+
+    &:first-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 1736px) {
+  .account {
+    width: 50%;
+  }
+
+  .balanceUp a {
+    margin-right: 20px;
+  }
+
+  .accountInfoEdit input {
+    width: 100%;
+  }
+
+  .tabs .ui-tabs-panel a {
+    margin-right: 30px;
+  }
+
+  .accountInfoSettings button {
+    width: 125px;
+  }
+
+  .lotteryGains p {
+    width: 200px;
+    margin-right: calc(100% / 5 - 202px);
+
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 1459px) {
+  .topHeaderInfoCol3 {
+    margin-right: 20px;
+  }
+
+  .banner h5 {
+    font-size: rem(14);
+  }
+
+  .bannerLeft {
+    flex: 0 0 450px;
+  }
+
+  .bannerHot {
+    flex: 0 0 calc(100% - 427px);
+  }
+
+  .navigationPanelCol {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .navigationPanelRight {
+    flex: 0 0 40%;
+  }
+
+  .navigationPanelSearch {
+    padding-left: 15px;
+    width: 250px;
+
+    input {
+      width: 250px;
+      height: 30px;
+      line-height: 30px;
+      padding-left: 30px;
+      background-position-x: 5px;
+    }
+  }
+
+  .navigationPanelFilterBtn {
+    padding: 4px 7px;
+  }
+
+  .navigationPanelFilter {
+    padding: 0 10px;
+    width: calc(100% - 300px)
+  }
+
+  .navigationPanelGames {
+    margin: 0 15px;
+  }
+
+  .contentProductsItem {
+    margin: {
+      left: 15px;
+      right: 15px;
+    }
+  }
+
+  .bottomFooter {
+    padding: 15px;
+
+    li {
+      margin: {
+        left: 10px;
+        right: 10px;
+      }
+    }
+  }
+
+  .profileBalanceAmount {
+    padding: 0 5px;
+  }
+
+  .faqBeginWith p {
+    width: calc(100% / 3 - 3px);
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .accountInfoEdit {
+    padding-left: 15px;
+    width: calc(100% - 175px);
+
+    input {
+      max-width: 200px;
+    }
+  }
+
+  .balanceUp a {
+    margin-right: 7px;
+  }
+
+  .tabs .ui-tabs-panel a {
+    margin-right: 10px;
+  }
+
+  .accountInfoSettings button {
+    width: 95px;
+
+    &.red {
+      margin-right: 0;
+    }
+  }
+
+  .lotteryGains p {
+    width: 181px;
+    margin-right: calc(100% / 5 - 186px);
+
+    img {
+      height: 170px;
+      width: 170px;
+    }
+  }
+
+  .lotteryGame {
+    width: 550px;
+    padding: 0;
+
+    p {
+      width: 100px;
+
+      img {
+        width: 94px;
+      }
+    }
+  }
+
+  .wheelSpinner {
+    flex: 0 0 450px;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .lottery a {
+    position: relative;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1265px) {
+  .accountInfo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 600px;
+  }
+
+  .accountInfoAvatar {
+    margin: 0 auto 45px;
+  }
+
+  .accountInfoEdit {
+    width: 100%;
+  }
+
+  .balanceWrap {
+    display: block;
+    min-height: 600px;
+  }
+
+  .contentProductsItem {
+    margin: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+
+  header .auth {
+    padding-left: 15px;
+  }
+
+  .order {
+    &Info {
+      width: 300px;
+    }
+
+    &Products {
+      width: calc(100% - 300px);
+    }
+  }
+
+  .accountInfoSettings {
+    margin-top: 20px;
+  }
+
+  .accountInfoEdit input {
+    margin-bottom: 0;
+  }
+
+  .lotteryGains p {
+    width: 176px;
+    margin-right: calc(100% / 5 - 142px);
+
+    &:nth-child(5n+1) {
+      margin-right: calc(100% / 5 - 142px);
+    }
+
+    &:nth-child(4n+1) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 1190px) {
+  aside {
+    width: 230px;
+  }
+  main {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+  }
+
+  header nav {
+    padding: {
+      left: 10px;
+      top: 10px;
+    }
+  }
+
+  header nav .main-menu li a {
+    font-size: 1rem;
+    padding: 5px;
+    margin-bottom: 2px;
+  }
+
+  .topHeader {
+    padding: 0 15px;
+  }
+
+  .topHeaderInfo {
+    max-width: 60%;
+  }
+
+  .topHeaderSocial {
+    max-width: 40%;
+  }
+
+  .topHeaderInfoCol3 {
+    margin-right: 20px;
+    padding-left: 24px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .bannerLeft {
+    flex: 0 0 350px;
+  }
+
+  .bannerHot {
+    flex: 0 0 calc(100% - 327px);
+  }
+
+  .bannerSign.bannerSignBlue {
+    margin-right: 6px;
+  }
+
+  .bannerHot .timer {
+    margin-left: 5px;
+  }
+
+  .navigationPanel {
+    align-items: center;
+  }
+
+  .navigationPanelCol {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    &:first-child {
+      flex-direction: column;
+      display: flex;
+    }
+  }
+
+  .navigationPanelFilter {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navigationPanelFilterBtn {
+    margin: 0 5px;
+  }
+
+  .navigationPanelGames {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .faqQuestionsAccordion, .faqQuestionsSupport {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  #accordion {
+    margin-left: 30px;
+  }
+
+  .faqQuestionsSupport {
+    padding-right: 15px;
+    flex: 0 0 calc(100% - 45px);
+
+    .ui-accordion-content, .quote {
+      max-width: 100%;
+    }
+  }
+
+  .col50 {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    ul {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  .bottomFooterPayments {
+    justify-content: center;
+  }
+
+  .profile {
+    padding: 5px 10px;
+  }
+
+  .profileInfoPhoto {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profileBalance {
+    padding-top: 5px;
+
+    h3 {
+      margin-bottom: 5px;
+    }
+  }
+
+  footer .footerLogo img {
+    width: 120px;
+    margin-bottom: 5px;
+  }
+
+  footer .copyright h4, footer .copyright h3 {
+    margin-bottom: 5px;
+    font-size: .8rem;
+    line-height: normal;
+  }
+
+  .contentProducts {
+    justify-content: space-evenly;
+  }
+
+  .modalWrap {
+    padding: 30px;
+  }
+
+  .modal {
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .form {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+    }
+
+    .signInWith {
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .tabs .ui-tabs-panel a {
+    margin-right: 10px;
+  }
+
+  .orderProducts p {
+    margin-right: 5px;
+  }
+
+  .tabs {
+    .ui-tabs-panel {
+      justify-content: space-evenly;
+    }
+  }
+
+  .wheel {
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+
+  .wheelSettings,
+  .wheelSpinner {
+    margin-bottom: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  aside {
+    width: 200px;
+  }
+
+  main {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+
+  .profile {
+    padding: 10px;
+  }
+
+  header nav .main-menu li a {
+    font-size: .875rem;
+  }
+
+  .topHeaderSocial ul li {
+    margin: 0 3px;
+  }
+
+  .topHeaderInfoCol3 {
+    margin-right: 5px;
+    padding-left: 19px;
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+
+    strong {
+      font-size: .7rem;
+    }
+
+    span {
+      font-size: .6rem;
+    }
+  }
+
+  .bannerLeft {
+    flex: 0 0 250px;
+    background-position: 0 0;
+  }
+
+  .bannerHot {
+    flex: 0 0 calc(100% - 221px);
+    z-index: 1;
+    margin-left: -29px;
+    position: relative;
+
+    .timer {
+      position: absolute;
+      right: 5px;
+      top: 38px;
+      padding: 5px;
+
+      span {
+        padding: 2px;
+        font-size: .6rem;
+      }
+    }
+  }
+
+  .bannerSign {
+    margin-right: 5px;
+  }
+
+  .banner h5 {
+    font-size: .75rem;
+  }
+
+  .navigationPanel {
+    padding: 5px 0;
+  }
+
+  .navigationPanelCol {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    &:first-child {
+      flex-direction: row;
+    }
+  }
+
+  .navigationPanelFilter {
+    padding: 0 10px;
+    width: calc(100% - 300px);
+    margin-top: 0;
+  }
+
+  .navigationPanelRight {
+    justify-content: space-between;
+    padding: 15px;
+    flex: 0 0 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
+
+  .navigationPanelGames {
+    margin: 0;
+  }
+
+  .navigationPanelLang {
+    padding-right: 0;
+  }
+
+  .aboutUsCol,
+  .aboutUsCol:first-of-type {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .aboutUsLogo {
+    padding-left: 0;
+  }
+
+  .accountInfoAvatar {
+    margin: 0 auto 45px;
+  }
+
+  .accountInfoEdit {
+    width: 100%;
+  }
+
+  .account {
+    width: 100%;
+
+    &Info {
+      display: block;
+      min-height: 0;
+
+      &Edit {
+        width: calc(100% - 275px);
+        padding-left: 35px;
+      }
+    }
+  }
+
+  .balance {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 30px;
+  }
+
+  header .auth {
+    padding: 0 {
+      top: 5px;
+    }
+
+    p {
+      font-size: .85rem;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      img {
+        width: 15px;
+        height: 15px;
+      }
+
+      a {
+        padding: 5px 0;
+        font-size: .875rem;
+      }
+    }
+  }
+
+  .tabs {
+    ul {
+      li a {
+        width: 125px;
+      }
+
+      .modals li a {
+        width: 100px;
+      }
+    }
+
+    .ui-tabs-panel {
+      a {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+
+  #exchange .modalWrap {
+    padding: 40px;
+  }
+
+  .order {
+    &Info, &Products {
+      width: 100%;
+    }
+  }
+
+  .accountInfoEdit {
+    width: calc(100% - 190px);
+  }
+
+  .accountInfoSettings {
+    margin-top: 15px;
+  }
+
+  .lotteryGame {
+    width: 100%;
+
+    p img {
+      width: 100px;
+    }
+  }
+
+  .lotteryGains p {
+    width: calc(100% / 3 - 3px);
+    margin-right: 0 !important;
+
+    img {
+      width: 95%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    width: calc(100% - 30px);
+    z-index: 9;
+    height: auto;
+    padding: 10px 15px;
+    right: 0;
+    margin: auto;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    .mobile_nav {
+      display: flex;
+    }
+
+    header {
+      display: none;
+
+      nav {
+        padding: 0;
+        border-top: 0;
+      }
+    }
+
+    > .logo {
+      display: none;
+    }
+
+    footer {
+      display: none;
+    }
+  }
+
+  header nav .main-menu li a {
+    border-radius: 4px;
+  }
+
+  .logo {
+    padding: 0;
+    height: auto;
+
+    img {
+      height: 29px;
+    }
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+    padding-top: 49px;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .topHeaderInfo {
+    max-width: 100%;
+    flex: 0 0 100%;
+    justify-content: space-between;
+  }
+
+  .topHeaderSocial {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .topHeaderInfoCol3 {
+    min-width: 0;
+  }
+
+  .bannerLeft {
+    display: none;
+  }
+
+  .bannerHot {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+    background-position: center;
+
+    h5 {
+      position: relative;
+      top: 3px;
+    }
+
+    .timer {
+      position: static;
+      right: 0;
+      top: 0;
+      padding: 5px;
+    }
+  }
+
+  .navigationPanelCol:first-child {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .navigationPanelSearch {
+    padding-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navigationPanelFilter {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .navigationPanelGames img {
+    margin-right: 5px;
+  }
+
+  .faqBeginWith p {
+    width: calc(100% / 2 - 2px);
+  }
+
+  .faqQuestionsAccordion .ui-accordion-content,
+  .faqQuestionsSupport .quote {
+    margin-left: 0;
+  }
+
+  .bottomFooterPayments {
+    flex-wrap: wrap;
+  }
+
+  header .auth {
+    padding: 5px 0;
+    border-bottom: 1px solid $blue;
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    ul li {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% / 3 - 3px);
+
+      a {
+        padding: 5px 0;
+        font-size: .8rem;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .accountInfo {
+    max-width: calc(600px - 60px);
+  }
+
+  .balanceWrap {
+    max-width: 600px;
+  }
+
+  .navigationPanelRight {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .topHeaderInfo, .topHeaderSocial {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  #exchange {
+    .modalWrap {
+      padding: 40px;
+      width: calc(95% - 80px);
+    }
+
+    .goods {
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      p {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .tabs .ui-tabs-panel {
+    justify-content: space-evenly;
+
+    a {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .modal .wrapper {
+    overflow-y: auto;
+    align-items: flex-start;
+
+    .modalWrap {
+      margin-top: 15px;
+    }
+  }
+
+  header .auth {
+    ul li {
+      margin-bottom: 0;
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .accountInfo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .accountInfoAvatar {
+    margin: 0 auto 45px;
+  }
+
+  .accountInfoEdit {
+    width: 100%;
+    padding-left: 0;
+
+    input {
+      max-width: 180px;
+    }
+  }
+
+  .balanceWrap {
+    display: block;
+  }
+
+  .tabs ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+
+    li a {
+      width: 140px;
+    }
+
+    .modals {
+      float: none;
+      display: flex;
+      max-width: 300px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+
+      li a {
+        width: 140px;
+        margin: 0;
+      }
+    }
+  }
+
+  #takeAway {
+    &.modal {
+      .form .submit button {
+        width: 120px;
+      }
+    }
+
+    .modalWrap {
+      width: 270px;
+    }
+  }
+
+  .modal .formFieldCol {
+    width: 80px;
+  }
+
+  #exchange {
+    .modalWrap {
+      padding: 20px;
+      width: calc(98% - 40px);
+    }
+
+    .form .submit {
+      width: 100%;
+    }
+  }
+
+  .tabs .ui-tabs-panel a {
+    width: 120px;
+    height: 120px;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .order {
+    &Info p {
+      span .time {
+        margin-right: 0;
+      }
+
+      strong {
+        margin-right: 0;
+      }
+    }
+
+    &Products {
+      justify-content: space-evenly;
+
+      p {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .accountInfoSettings button {
+    width: 107px;
+
+    &.red {
+      margin-right: 0;
+    }
+  }
+
+  .wheelSettings ul li {
+    margin-right: 3px;
+
+    a {
+      width: 90px;
+    }
+  }
+
+  .wheelSpinner #arrow {
+    width: 70px;
+  }
+}
+
+@media (max-width: 559px) {
+  .lotteryGame {
+    width: 100%;
+  }
+
+  .lotteryGains p {
+    width: calc(100% / 2 - 2px);
+  }
+}
