@@ -27,184 +27,9 @@
     <title>F.A.Q</title>
 </head>
 <body>
-<aside class="sidebar">
-    <div class="mobile_nav">
-        <div class="logo">
-            <img src="assets/img/logo.svg" alt="Logo">
-        </div>
-        <span id="openMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-    </div>
-
-    <div class="logo">
-        <a href="index.html.twig"><img src="assets/img/logo.svg" alt="Logo"></a>
-    </div>
-    <header>
-        <div class="profile">
-            <div class="profileInfo">
-                <img class="profileInfoPhoto" src="assets/img/avatar.jpg" alt="User">
-                <span class="profileInfoLogin">god.of.shadow</span>
-            </div>
-            <div class="profileBalance">
-                <h3>Мой баланс</h3>
-                <div class="profileBalanceAmount coins">
-                    <img src="assets/img/coin.svg" alt="Coins">
-                    <strong>5600 C</strong>
-                </div>
-                <div class="profileBalanceAmount">
-                    <img src="assets/img/ruble.svg" alt="Ruble">
-                    <strong>56400 ₽</strong>
-                </div>
-            </div>
-        </div>
-        <nav>
-            <ul class="main-menu" id="menu">
-                <li>
-                    <a href="account.html.twig">
-                        <img src="assets/img/profile.svg" alt="Личный кабинет">
-                        Личный кабинет
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html.twig">
-                        <img src="assets/img/case.svg" alt="Кейсы">
-                        Кейсы
-                    </a>
-                </li>
-                <li>
-                    <a href="/">
-                        <img src="assets/img/tasks.svg" alt="Выполнять задания">
-                        Выполнять задания
-                    </a>
-                </li>
-                <li>
-                    <a href="myWinnings.html.twig">
-                        <img src="assets/img/gains.svg" alt="Мои выигрыши">
-                        Мои выигрыши
-                    </a>
-                </li>
-                <li>
-                    <a href="faq.html" class="active">
-                        <img src="assets/img/faq.svg" alt="F.A.Q">F.A.Q
-                    </a>
-                </li>
-                <li>
-                    <a href="aboutUs.html.twig">
-                        <img src="assets/img/about.svg" alt="О нас">
-                        О нас
-                    </a>
-                </li>
-                <li>
-                    <a href="/">
-                        <img src="assets/img/bonus.svg" alt="Бонусы">
-                        Бонусы
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <footer>
-        <div class="footerLogo">
-            <img src="assets/img/logo.png" alt="jackpot">
-        </div>
-        <div class="copyright">
-            <h4>mr.simple44</h4>
-            <h3>CS:GO  Rewind</h3>
-            <p>©  2020</p>
-        </div>
-    </footer>
-</aside>
-
+{% include 'templateSite/sidebar.html.twig' %}
 <main>
-    <div class="topHeader">
-        <div class="topHeaderInfo">
-            <div class="topHeaderInfoCol3">
-                <img src="assets/img/users.svg" alt="234 567 876 Пользователей">
-                <strong>234 567 876</strong>
-                <span>Пользователей</span>
-            </div>
-            <div class="topHeaderInfoCol3">
-                <img src="assets/img/wifi.svg" alt="234 567 876 Игроков онлайн">
-                <strong>234 567 876</strong>
-                <span>Игроков онлайн</span>
-            </div>
-            <div class="topHeaderInfoCol3">
-                <img src="assets/img/chest.svg" alt="234 567 876 Кейсы">
-                <strong>234 567 876</strong>
-                <span>Кейсы</span>
-            </div>
-        </div>
-        <div class="topHeaderSocial">
-            <ul>
-                <li><a href="/"><img src="assets/img/tik-tok.svg" alt="TikTok"></a></li>
-                <li><a href="/"><img src="assets/img/steam.svg" alt="Steam"></a></li>
-                <li><a href="/"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
-                <li><a href="/"><img src="assets/img/telegram.svg" alt="Telegram"></a></li>
-                <li><a href="/"><img src="assets/img/vk.svg" alt="Vk"></a></li>
-                <li><a href="/"><img src="assets/img/instagram.svg" alt="Instagram"></a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="banner">
-        <div class="bannerLeft">
-            <span class="bannerSign">
-                <img class="bannerSignPic" src="assets/img/percent.svg" alt="Неделя ловушек 45%">
-            </span>
-            <h5>Неделя ловушек 45%</h5>
-        </div>
-        <div class="bannerHot">
-            <span class="bannerSign bannerSignBlue">
-                <img class="bannerSignPic" src="assets/img/clock.svg" alt="Горячий розыгрыш!">
-            </span>
-            <h5>Горячий розыгрыш!</h5>
-            <div class="timer">
-                <span>02</span>
-                <span>14</span>
-                <span>34</span>
-                <span>03</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="navigationPanel">
-        <div class="navigationPanelCol">
-            <div class="navigationPanelSearch">
-                <input type="search" placeholder="Название кейса">
-            </div>
-            <div class="navigationPanelFilter">
-                <button class="navigationPanelFilterBtn active">
-                    1-20 ₽
-                </button>
-                <button class="navigationPanelFilterBtn">
-                    20-60 ₽
-                </button>
-                <button class="navigationPanelFilterBtn">
-                    60-80 ₽
-                </button>
-                <button class="navigationPanelFilterBtn">
-                    100+ ₽
-                </button>
-            </div>
-        </div>
-        <div class="navigationPanelCol navigationPanelRight">
-            <a href="/" class="navigationPanelGames">
-                <img src="assets/img/games.svg" alt="Игры">
-                Игры
-            </a>
-            <a href="wheelOfFortune.html.twig" class="navigationPanelGames">
-                <img src="assets/img/lottery.svg" alt="Колесо удачи">
-                Колесо удачи
-            </a>
-            <ul class="navigationPanelLang">
-                <li><a class="active" href="/">RU</a></li>
-                <li><a href="/">EN</a></li>
-            </ul>
-        </div>
-    </div>
+    {% include 'templateSite/header.html.twig' %}
 
     <div class="container">
         <div class="faq">
@@ -219,7 +44,7 @@
                 <p><span>Пополните <a href="account.html.twig">Баланс</a> <br>удобным Вам способом</span></p>
                 <p><span>Открывайте кейсы <br>в <a href="/">Колесе удачи</a></span></p>
                 <p><span>Перейдите на страницу <br>
-                    <a href="myWinnings.html.twig">Мои выигрыши</a> <br>и обменяйте кейсы на коины
+                    <a href={{ path ('my_winnings') }}>Мои выигрыши</a> <br>и обменяйте кейсы на коины
                 </span></p>
                 <p><span>Заберите коины в своем <br>почтовом ящике</span></p>
             </div>
@@ -231,7 +56,7 @@
                         <h3>Как вывести коины?</h3>
                         <div>
                             <p>
-                                Перейдите на страницу <a href="myWinnings.html.twig">Мои выигрыши</a>
+                                Перейдите на страницу <a href={{ path ('my_winnings') }}>Мои выигрыши</a>
                                 и обменяйте кейсы на коины
                             </p>
                         </div>
@@ -311,26 +136,7 @@
             </div>
         </div>
     </div>
-
-    <div class="bottomFooter">
-        <div class="col50">
-            <ul class="bottomFooterMenu">
-                <li><a href="/">Пользовательское соглашение</a></li>
-                <li><a href="mailTo:support@xray-gaming.net">support@xray-gaming.net</a></li>
-                <li><a href="/">Контакты</a></li>
-            </ul>
-        </div>
-        <div class="col50">
-            <div class="bottomFooterPayments">
-                <a href="/" target="_blank"><img src="assets/img/mastercard.svg" alt="mastercard"></a>
-                <a href="/" target="_blank"><img src="assets/img/visa.svg" alt="visa"></a>
-                <a href="/" target="_blank"><img src="assets/img/webMoney.svg" alt="webMoney"></a>
-                <a href="/" target="_blank"><img src="assets/img/bitcoin.svg" alt="bitcoin"></a>
-                <a href="/" target="_blank"><img src="assets/img/paypal.svg" alt="paypal"></a>
-                <a href="/" target="_blank"><img src="assets/img/yandex.svg" alt="yandex"></a>
-            </div>
-        </div>
-    </div>
+    {% include 'templateSite/footer.html.twig' %}
 </main>
 
 <a href="#" id="toTop">
