@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<footer>
-    {% block footer %}
-        <div class="bottomFooter">
-            <div class="col50">
-                <ul class="bottomFooterMenu">
-                    <li><a href="/">Пользовательское соглашение</a></li>
-                    <li><a href="mailTo:support@xray-gaming.net">support@xray-gaming.net</a></li>
-                    <li><a href="/">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="col50">
-                <div class="bottomFooterPayments">
-                    <a href="/"' target="_blank"><img src="assets/img/mastercard.svg" alt="mastercard"></a>
-                    <a href="/"' target="_blank"><img src="assets/img/visa.svg" alt="visa"></a>
-                    <a href="/"' target="_blank"><img src="assets/img/webMoney.svg" alt="webMoney"></a>
-                    <a href="/"' target="_blank"><img src="assets/img/bitcoin.svg" alt="bitcoin"></a>
-                    <a href="/"' target="_blank"><img src="assets/img/paypal.svg" alt="paypal"></a>
-                    <a href="/"' target="_blank"><img src="assets/img/yandex.svg" alt="yandex"></a>
-                </div>
+{% block footer %}
+    <div class="bottomFooter">
+        <div class="col50">
+            <ul class="bottomFooterMenu">
+                <li><a href="/">Пользовательское соглашение</a></li>
+                <li><a href="mailTo:support@xray-gaming.net">support@xray-gaming.net</a></li>
+                <li><a href="/">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="col50">
+            <div class="bottomFooterPayments">
+                <a href="/" target="_blank"><img src="assets/img/mastercard.svg" alt="mastercard"></a>
+                <a href="/" target="_blank"><img src="assets/img/visa.svg" alt="visa"></a>
+                <a href="/" target="_blank"><img src="assets/img/webMoney.svg" alt="webMoney"></a>
+                <a href="/" target="_blank"><img src="assets/img/bitcoin.svg" alt="bitcoin"></a>
+                <a href="/" target="_blank"><img src="assets/img/paypal.svg" alt="paypal"></a>
+                <a href="/" target="_blank"><img src="assets/img/yandex.svg" alt="yandex"></a>
             </div>
         </div>
-    {% endblock %}
-</footer>
-</html>
+    </div>
+{% endblock %}

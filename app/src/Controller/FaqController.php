@@ -8,6 +8,8 @@ use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
 
 class FaqController extends AbstractController
 {
@@ -18,11 +20,14 @@ class FaqController extends AbstractController
         $this->userService = $userService;
     }
     #[Route('/faq', name: 'faq_page')]
-    public function index(): Response
+    public function index(AuthenticationUtils $authenticationUtils): Response
     {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
+
         $user     = $this->getUser();
         $username = $this->userService->prepareUsername($user);
 
-        return $this->render('faq.html.twig', ['email' => $user->getUserIdentifier(), 'username' => $username, 'error' => null, 'last_username' => '',]);
+        return $this->render('faq.html.twig', ['error' => $error,'last_username' => $lastUsername,]);
     }
 }

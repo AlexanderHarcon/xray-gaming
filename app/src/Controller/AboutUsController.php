@@ -8,6 +8,7 @@ use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class AboutUsController extends AbstractController
 {
@@ -18,11 +19,13 @@ class AboutUsController extends AbstractController
         $this->userService = $userService;
     }
     #[Route('/about-us', name: 'aboutUs_page')]
-    public function index(): Response
+    public function index(AuthenticationUtils $authenticationUtils): Response
     {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUsername = $authenticationUtils->getLastUsername();
         $user     = $this->getUser();
         $username = $this->userService->prepareUsername($user);
 
-        return $this->render('aboutUs.html.twig', ['email' => $user->getUserIdentifier(), 'username' => $username, 'error' => null, 'last_username' => '',]);
+        return $this->render('aboutUs.html.twig', ['error' => $error,'last_username' => $lastUsername,]);
     }
 }

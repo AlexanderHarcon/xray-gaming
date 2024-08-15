@@ -1,0 +1,145 @@
+{% block header %}
+    <div id="signIn" class="modal">
+        <div class="wrapper">
+            <div class="modalWrap">
+
+                <div class="modalHead">
+                    <h2>Регистрация</h2>
+                    <span class="close">
+                    <img src="assets/img/cross.svg" alt="Close modal">
+                </span>
+                </div>
+
+                <div class="modalBody">
+
+                    <form class="form" action="{{ path('user_registration') }}" method="post">
+                        <div class="formField">
+                            <label for="email">
+                                <img src="assets/img/envelope.svg" alt="Email">
+                                Email
+                            </label>
+                            <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="email"
+                                   id="email">
+                        </div>
+                        <div class="formField">
+                            <label for="password">
+                                <img src="assets/img/lock.svg" alt="password">
+                                Придумайте пароль
+                            </label>
+                            <input type="password" placeholder="•••••••" name="password" id="password">
+                        </div>
+                        <div class="formField">
+                            <label for="repeatPassword">
+                                <img src="assets/img/lock.svg" alt="repeatPassword">
+                                Подтвердите пароль
+                            </label>
+                            <input type="password" placeholder="•••••••" name="repeatPassword" id="repeatPassword">
+                        </div>
+                        <div class="submit">
+                            <button type="submit">Зарегистрироваться</button>
+                        </div>
+                    </form>
+
+                    <div class="signInWith">
+                        <p>Зарегестрироваться с помощью </p>
+                        <ul>
+                            <li><a href="{{ path('case_page') }}"><img src="assets/img/steam.svg" alt="Steam"></a></li>
+                            <li><a href="{{ path('case_page') }}"><img src="assets/img/google.svg" alt="Google"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="login">
+                        <p>Уже зарегистрированы?</p>
+                        <a href="{{ path('app_login') }}">Войти</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="modal">
+        <div class="wrapper">
+            <div class="modalWrap">
+
+                <div class="modalHead">
+                    <h2>Вход</h2>
+                    <span class="close">
+                    <img src="assets/img/cross.svg" alt="Close modal">
+                </span>
+                </div>
+
+                <div class="modalBody">
+
+                    <form id="login-form" class="form" action="{{ path('app_login') }}" method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="formField">
+                            <label for="loginEmail">
+                                <img src="assets/img/envelope.svg" alt="Email">
+                                Email
+                            </label>
+                            <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="_username"
+                                   id="loginEmail" value="{{ last_username }}">
+                        </div>
+                        <div class="formField">
+                            <label for="loginPassword">
+                                <img src="assets/img/lock.svg" alt="password">
+                                Пароль
+                            </label>
+                            <input type="password" placeholder="•••••••" name="_password" id="loginPassword">
+                        </div>
+                        <div class="submit">
+                            <input type="hidden" name="_target_path" value="{{ path('main_page') }}">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <button type="submit">Войти</button>
+                            <a href="#recovery" class="openModal">Забыли пароль?</a>
+                        </div>
+                    </form>
+
+                    <div class="signInWith">
+                        <p>Зарегестрироваться с помощью </p>
+                        <ul>
+                            <li><a href="{{ path('case_page') }}"><img src="assets/img/steam.svg" alt="Steam"></a></li>
+                            <li><a href="{{ path('case_page') }}"><img src="assets/img/google.svg" alt="Google"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="login">
+                        <p>Ещё не зарегистрированы?</p>
+                        <a class="openModal" href="#signIn">Присоединиться</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recovery" class="modal">
+        <div class="wrapper">
+            <div class="modalWrap">
+
+                <div class="modalHead">
+                    <h2>Восстановление пароля</h2>
+                    <span class="close">
+                    <img src="assets/img/cross.svg" alt="Close modal">
+                </span>
+                </div>
+
+                <div class="modalBody">
+
+                    <form class="form" action="">
+                        <div class="formField">
+                            <label for="recoverEmail">
+                                <img src="assets/img/envelope.svg" alt="Email">
+                                Email
+                            </label>
+                            <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="email"
+                                   id="recoverEmail">
+                        </div>
+                        <div class="submit">
+                            <button type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

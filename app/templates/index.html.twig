@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-Ï<html lang="en">
+<html lang="en">
 <head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,315 +23,172 @@
 
 </head>
 <body>
-{# {% if app.user and app.user.email %} #}
-{#    <div class="mb-3"> #}
-{#        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a> #}
-{#    </div> #}
-{# {% endif %} #}
-
 {% include 'templateSite/sidebar.html.twig' %}
-
 <main>
     {% include 'templateSite/header.html.twig' %}
     <div class="container">
+        {% for category, products in productsMap %}
+        <h2 class="ttl">{{ category }}</h2>
         <div class="content">
-            <h2 class="ttl">Популярные кейсы</h2>
             <div class="contentProducts">
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>Ï
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a>
-                    <span class="label temp">6 дней</span>
-                    <h4>Hoodie</h4>
-                    <a class="btn" href="{{ path('case_page') }}">345 ₽
-                        <del>800 ₽</del>
-                    </a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a>
-                    <span class="label temp">6 дней</span>
-                    <h4>Hoodie</h4>
-                    <a class="btn" href="{{ path('case_page') }}">345 ₽
-                        <del>800 ₽</del>
-                    </a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a>
-                    <span class="label temp">6 дней</span>
-                    <h4>Hoodie</h4>
-                    <a class="btn" href="{{ path('case_page') }}">345 ₽
-                        <del>800 ₽</del>
-                    </a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
+                {% for product in products %}
+                    <div class="contentProductsItem">
+                        <a href="{{ path('case_page') }}"><img src="assets/img/{{ product.imagePath }}" alt="" width="225px" height="225px"></a>
+                        <span class="label discount">4 дня</span>
+                        <h4>{{ product.name }}</h4>
+                        <a class="btn" href="{{ path('case_page') }}">{{ product.price }} UAH</a>
+                    </div>
+                {% endfor %}
             </div>
-            <h2 class="ttl">Одежда</h2>
-            <div class="contentProducts">
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-            </div>
-            <h2 class="ttl">Кейсы</h2>
-            <div class="contentProducts">
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                    <span class="label discount">4 дня</span>
-                    <h4>CS:GO Rewind</h4>
-                    <a class="btn" href="{{ path('case_page') }}">200 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a>
-                    <span class="label discount">2 дня</span>
-                    <h4>Cases for phone</h4>
-                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a>
-                </div>
-                <div class="contentProductsItem">
-                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a>
-                    <span class="label temp">1 день</span>
-                    <h4>Console for games</h4>
-                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
+    {#        <h2 class="ttl">Популярные кейсы</h2> #}
+    {#        <div class="contentProducts"> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a> #}
+    {#                <span class="label discount">4 дня</span> #}
+    {#                <h4>CS:GO Rewind</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">200 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#                <span class="label discount">2 дня</span> #}
+    {#                <h4>Cases for phone</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#                <span class="label temp">1 день</span> #}
+    {#                <h4>Console for games</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a> #}
+    {#                <span class="label temp">6 дней</span> #}
+    {#                <h4>Hoodie</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">345 ₽ #}
+    {#                    <del>800 ₽</del> #}
+    {#                </a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a> #}
+    {#                <span class="label discount">4 дня</span> #}
+    {#                <h4>CS:GO Rewind</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">200 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#                <span class="label discount">2 дня</span> #}
+    {#                <h4>Cases for phone</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#                <span class="label temp">1 день</span> #}
+    {#                <h4>Console for games</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a> #}
+    {#                <span class="label temp">6 дней</span> #}
+    {#                <h4>Hoodie</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">345 ₽ #}
+    {#                    <del>800 ₽</del> #}
+    {#                </a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a> #}
+    {#                <span class="label discount">4 дня</span> #}
+    {#                <h4>CS:GO Rewind</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">200 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#                <span class="label discount">2 дня</span> #}
+    {#                <h4>Cases for phone</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#                <span class="label temp">1 день</span> #}
+    {#                <h4>Console for games</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/hoodie.png" alt="Hoodie"></a> #}
+    {#                <span class="label temp">6 дней</span> #}
+    {#                <h4>Hoodie</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">345 ₽ #}
+    {#                    <del>800 ₽</del> #}
+    {#                </a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a> #}
+    {#                <span class="label discount">4 дня</span> #}
+    {#                <h4>CS:GO Rewind</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">200 ₽</a> #}
+    {#            </div> #}
+    {#            <div class="contentProductsItem"> #}
+    {#                <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#                <span class="label discount">2 дня</span> #}
+    {#                <h4>Cases for phone</h4> #}
+    {#                <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#            </div> #}
+    {#        </div> #}
+
+    {#        #}{#                <div class="contentProductsItem"> #}
+    {#        #}{#                    <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#        #}{#                    <span class="label discount">2 дня</span> #}
+    {#        #}{#                    <h4>Cases for phone</h4> #}
+    {#        #}{#                    <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#        #}{#                </div> #}
+    {#        #}{#                <div class="contentProductsItem"> #}
+    {#        #}{#                    <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#        #}{#                    <span class="label temp">1 день</span> #}
+    {#        #}{#                    <h4>Console for games</h4> #}
+    {#        #}{#                    <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#        #}{#                </div> #}
+    {#    </div> #}
+    {#    <h2 class="ttl">Кейсы</h2> #}
+    {#    <div class="contentProducts"> #}
+    {#        <div class="contentProductsItem"> #}
+    {#            <a href="{{ path('case_page') }}"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a> #}
+    {#            <span class="label discount">4 дня</span> #}
+    {#            <h4>CS:GO Rewind</h4> #}
+    {#            <a class="btn" href="{{ path('case_page') }}">200 ₽</a> #}
+    {#        </div> #}
+    {#        <div class="contentProductsItem"> #}
+    {#            <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#            <span class="label discount">2 дня</span> #}
+    {#            <h4>Cases for phone</h4> #}
+    {#            <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#        </div> #}
+    {#        <div class="contentProductsItem"> #}
+    {#            <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#            <span class="label temp">1 день</span> #}
+    {#            <h4>Console for games</h4> #}
+    {#            <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#        </div> #}
+    {#        <div class="contentProductsItem"> #}
+    {#            <a href="{{ path('case_page') }}"><img src="assets/img/cases.png" alt="Cases for phone"></a> #}
+    {#            <span class="label discount">2 дня</span> #}
+    {#            <h4>Cases for phone</h4> #}
+    {#            <a class="btn" href="{{ path('case_page') }}">456 ₽</a> #}
+    {#        </div> #}
+    {#        <div class="contentProductsItem"> #}
+    {#            <a href="{{ path('case_page') }}"><img src="assets/img/console.png" alt="Console for games"></a> #}
+    {#            <span class="label temp">1 день</span> #}
+    {#            <h4>Console for games</h4> #}
+    {#            <a class="btn" href="{{ path('case_page') }}">4500 ₽</a> #}
+    {#        </div> #}
+    {#    </div> #}
+    {#    </div> #}
+    {#    </div> #}
     {% include 'templateSite/footer.html.twig' %}
 </main>
-
-<div id="signIn" class="modal">
-    <div class="wrapper">
-        <div class="modalWrap">
-
-            <div class="modalHead">
-                <h2>Регистрация</h2>
-                <span class="close">
-                    <img src="assets/img/cross.svg" alt="Close modal">
-                </span>
-            </div>
-
-            <div class="modalBody">
-
-                <form class="form" action="{{ path('user_registration') }}" method="post">
-                    <div class="formField">
-                        <label for="email">
-                            <img src="assets/img/envelope.svg" alt="Email">
-                            Email
-                        </label>
-                        <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="email"
-                               id="email">
-                    </div>
-                    <div class="formField">
-                        <label for="password">
-                            <img src="assets/img/lock.svg" alt="password">
-                            Придумайте пароль
-                        </label>
-                        <input type="password" placeholder="•••••••" name="password" id="password">
-                    </div>
-                    <div class="formField">
-                        <label for="repeatPassword">
-                            <img src="assets/img/lock.svg" alt="repeatPassword">
-                            Подтвердите пароль
-                        </label>
-                        <input type="password" placeholder="•••••••" name="repeatPassword" id="repeatPassword">
-                    </div>
-                    <div class="submit">
-                        <button type="submit">Зарегистрироваться</button>
-                    </div>
-                </form>
-
-                <div class="signInWith">
-                    <p>Зарегестрироваться с помощью </p>
-                    <ul>
-                        <li><a href="{{ path('case_page') }}"><img src="assets/img/steam.svg" alt="Steam"></a></li>
-                        <li><a href="{{ path('case_page') }}"><img src="assets/img/google.svg" alt="Google"></a></li>
-                    </ul>
-                </div>
-
-                <div class="login">
-                    <p>Уже зарегистрированы?</p>
-                    <a href="{{ path('app_login') }}">Войти</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="login" class="modal">
-    <div class="wrapper">
-        <div class="modalWrap">
-
-            <div class="modalHead">
-                <h2>Вход</h2>
-                <span class="close">
-                    <img src="assets/img/cross.svg" alt="Close modal">
-                </span>
-            </div>
-
-            <div class="modalBody">
-
-                <form id="login-form" class="form" action="{{ path('app_login') }}" method="post">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                    <div class="formField">
-                        <label for="loginEmail">
-                            <img src="assets/img/envelope.svg" alt="Email">
-                            Email
-                        </label>
-                        <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="_username"
-                               id="loginEmail" value="{{ last_username }}">
-                    </div>
-                    <div class="formField">
-                        <label for="loginPassword">
-                            <img src="assets/img/lock.svg" alt="password">
-                            Пароль
-                        </label>
-                        <input type="password" placeholder="•••••••" name="_password" id="loginPassword">
-                    </div>
-                    <div class="submit">
-                        <input type="hidden" name="_target_path" value="{{ path('main_page') }}">
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        <button type="submit">Войти</button>
-                        <a href="#recovery" class="openModal">Забыли пароль?</a>
-                    </div>
-                </form>
-
-                <div class="signInWith">
-                    <p>Зарегестрироваться с помощью </p>
-                    <ul>
-                        <li><a href="{{ path('case_page') }}"><img src="assets/img/steam.svg" alt="Steam"></a></li>
-                        <li><a href="{{ path('case_page') }}"><img src="assets/img/google.svg" alt="Google"></a></li>
-                    </ul>
-                </div>
-
-                <div class="login">
-                    <p>Ещё не зарегистрированы?</p>
-                    <a class="openModal" href="#signIn">Присоединиться</a></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="recovery" class="modal">
-    <div class="wrapper">
-        <div class="modalWrap">
-
-            <div class="modalHead">
-                <h2>Восстановление пароля</h2>
-                <span class="close">
-                    <img src="assets/img/cross.svg" alt="Close modal">
-                </span>
-            </div>
-
-            <div class="modalBody">
-
-                <form class="form" action="">
-                    <div class="formField">
-                        <label for="recoverEmail">
-                            <img src="assets/img/envelope.svg" alt="Email">
-                            Email
-                        </label>
-                        <input autocomplete="no" type="email" placeholder="god.of.shadow@ru.net" name="email"
-                               id="recoverEmail">
-                    </div>
-                    <div class="submit">
-                        <button type="submit">Отправить</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
+    {% include 'templateSite/modalForm.html.twig' %}
 <a href="#" id="toTop">
     <img src="assets/img/toTop.svg" alt="Go to top">
 </a>
