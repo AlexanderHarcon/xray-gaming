@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png') }}">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/site.webmanifest">
 
@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <script
             src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -21,8 +21,8 @@
             src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"></script>
-    <script src="assets/js/jquery.mask.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="{{ asset('assets/js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <title>Мои выигрыши</title>
 </head>
@@ -41,26 +41,18 @@
                 </ul>
             </ul>
             <div id="myWinnings">
-                <a href="#"><img src="assets/img/bags.png" alt="Bags"></a>
-                <a href="#"><img src="assets/img/console.png" alt="Console"></a>
-                <a href="#"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                <a href="#"><img src="assets/img/phone.png" alt="Phone"></a>
-                <a href="#"><img src="assets/img/tshirts.png" alt="T-Shirts"></a>
-                <a href="#"><img src="assets/img/games.png" alt="Games"></a>
-                <a href="#"><img src="assets/img/bags.png" alt="Bags"></a>
-                <a href="#"><img src="assets/img/console.png" alt="Console"></a>
-                <a href="#"><img src="assets/img/rewind.png" alt="CS:GO  Rewind"></a>
-                <a href="#"><img src="assets/img/phone.png" alt="Phone"></a>
-                <a href="#"><img src="assets/img/tshirts.png" alt="T-Shirts"></a>
-                <a href="#"><img src="assets/img/games.png" alt="Games"></a>
-                <a href="#"><img src="assets/img/tshirts.png" alt="T-Shirts"></a>
-                <a href="#"><img src="assets/img/games.png" alt="Games"></a>
+                {% for winning in winnings %}
+                    <a href="#" data-productID="{{ winning.id }}"> <img
+                                src="assets/img/case/{{ winning.productid.imagePath }}" alt="Bags"></a>
+                {% else %}
+                    <li>No winnings found.</li>
+                {% endfor %}
             </div>
             <div id="myOrders">
                 <div class="order">
                     <div class="orderInfo">
                         <p>
-                            <strong><img src="assets/img/coin.svg" alt="Coins">COIN</strong>
+                            <strong><img src="{{ asset('assets/img/coin.svg') }}" alt="Coins">COIN</strong>
                             <span class="yellow">666389 C</span>
                         </p>
                         <p>
@@ -77,20 +69,20 @@
                         </p>
                     </div>
                     <div class="orderProducts">
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
-                        <p><img src="assets/img/tshirts.png" alt="T-Shirts">T-Shirts</p>
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
-                        <p><img src="assets/img/tshirts.png" alt="T-Shirts">T-Shirts</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/tshirts.png') }}" alt="T-Shirts">T-Shirts</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/tshirts.png') }}" alt="T-Shirts">T-Shirts</p>
                     </div>
                 </div>
                 <div class="order">
                     <div class="orderInfo">
                         <p>
-                            <strong><img src="assets/img/coin.svg" alt="Coins">COIN</strong>
+                            <strong><img src="{{ asset('assets/img/coin.svg') }}" alt="Coins">COIN</strong>
                             <span class="yellow">666389 C</span>
                         </p>
                         <p>
@@ -107,15 +99,15 @@
                         </p>
                     </div>
                     <div class="orderProducts">
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
                     </div>
                 </div>
                 <div class="order">
                     <div class="orderInfo">
                         <p>
-                            <strong><img src="assets/img/coin.svg" alt="Coins">COIN</strong>
+                            <strong><img src="{{ asset('assets/img/coin.svg') }}" alt="Coins">COIN</strong>
                             <span class="yellow">666389 C</span>
                         </p>
                         <p>
@@ -132,20 +124,20 @@
                         </p>
                     </div>
                     <div class="orderProducts">
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
-                        <p><img src="assets/img/tshirts.png" alt="T-Shirts">T-Shirts</p>
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
-                        <p><img src="assets/img/tshirts.png" alt="T-Shirts">T-Shirts</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/tshirts.png') }}" alt="T-Shirts">T-Shirts</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/tshirts.png') }}" alt="T-Shirts">T-Shirts</p>
                     </div>
                 </div>
                 <div class="order">
                     <div class="orderInfo">
                         <p>
-                            <strong><img src="assets/img/coin.svg" alt="Coins">COIN</strong>
+                            <strong><img src="{{ asset('assets/img/coin.svg') }}" alt="Coins">COIN</strong>
                             <span class="yellow">666389 C</span>
                         </p>
                         <p>
@@ -162,15 +154,15 @@
                         </p>
                     </div>
                     <div class="orderProducts">
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
                     </div>
                 </div>
                 <div class="order">
                     <div class="orderInfo">
                         <p>
-                            <strong><img src="assets/img/coin.svg" alt="Coins">COIN</strong>
+                            <strong><img src="{{ asset('assets/img/coin.svg') }}" alt="Coins">COIN</strong>
                             <span class="yellow">666389 C</span>
                         </p>
                         <p>
@@ -187,12 +179,12 @@
                         </p>
                     </div>
                     <div class="orderProducts">
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
-                        <p><img src="assets/img/bags.png" alt="Bags">Bags</p>
-                        <p><img src="assets/img/console.png" alt="Console">Console</p>
-                        <p><img src="assets/img/phone.png" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
+                        <p><img src="{{ asset('assets/img/bags.png') }}" alt="Bags">Bags</p>
+                        <p><img src="{{ asset('assets/img/console.png') }}" alt="Console">Console</p>
+                        <p><img src="{{ asset('assets/img/phone.png') }}" alt="Phone">Phone</p>
                     </div>
                 </div>
             </div>
@@ -205,8 +197,52 @@
 {% include 'templateSite/modalForm.html.twig' %}
 
 <a href="#" id="toTop">
-    <img src="assets/img/toTop.svg" alt="Go to top">
+    <img src="{{ asset('assets/img/toTop.svg') }}" alt="Go to top">
 </a>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Отримуємо кнопку з класом openModal
+        const openModalButton = document.querySelector('.openModal');
+
+        // Додаємо обробник кліку до кнопки
+        openModalButton.addEventListener('click', (event) => {
+            // Скасовуємо стандартну поведінку посилання
+            event.preventDefault();
+
+            // Отримуємо всі елементи з класом checked
+            const checkedElements = document.querySelectorAll('.checked');
+
+            // Створюємо масив для збереження productID
+            const winningIDs = [];
+
+            checkedElements.forEach(element => {
+                // Отримуємо значення data-productID
+                const productID = element.getAttribute('data-productID');
+                if (productID) {
+                    winningIDs.push(productID);
+                }
+            });
+
+            // Відправляємо POST запит на сервер
+            fetch('/newOrder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: JSON.stringify({winningIDs: winningIDs})
+            })
+                .then(response => response.json()) // Конвертуємо відповідь у JSON
+                .then(result => {
+                    console.log('Успіх:', result);
+                })
+                .catch(error => {
+                    console.error('Помилка:', error);
+                });
+        });
+    });
+
+</script>
 </html>

@@ -1,34 +1,34 @@
 {% block content %}
-    <aside class="sidebar">
-        <div class="mobile_nav">
-            <div class="logo">
-                <img src="assets/img/logo.svg" alt="Logo">
-            </div>
-            <span id="openMenu">
+<aside class="sidebar">
+    <div class="mobile_nav">
+        <div class="logo">
+            <img src="{{ asset( 'assets/img/logo.svg' ) }}" alt="Logo">
+        </div>
+        <span id="openMenu">
             <span></span>
             <span></span>
             <span></span>
         </span>
-        </div>
+    </div>
 
-        <div class="logo">
-            <a href="http://xray.local/"><img src="assets/img/logo.svg" alt="Logo"></a>
-        </div>
-        <header>
-            {% if app.user and app.user.email %}
-                <div class="profile">
-                    <div class="profileInfo">
-                        <img class="profileInfoPhoto" src="assets/img/avatar.jpg" alt="User">
+    <div class="logo">
+        <a href="http://xray.local/"><img src="{{ asset('assets/img/logo.svg' ) }}" alt="Logo"></a>
+    </div>
+    <header>
+        {% if app.user and app.user.email %}
+        <div class="profile">
+            <div class="profileInfo">
+                <img class="profileInfoPhoto" src="{{ asset( 'assets/img/avatar.jpg' ) }}" alt="User">
                         <span class="profileInfoLogin">{{ username }}</span>
                     </div>
                     <div class="profileBalance">
                         <h3>Мой баланс</h3>
                         <div class="profileBalanceAmount coins">
-                            <img src="assets/img/coin.svg" alt="Coins">
+                            <img src="{{asset( 'assets/img/coin.svg' ) }}" alt="Coins">
                             <strong>5600 C</strong>
                         </div>
                         <div class="profileBalanceAmount">
-                            <img src="assets/img/ruble.svg" alt="Ruble">
+                            <img src="{{asset( 'assets/img/ruble.svg' ) }}" alt="Ruble">
                             <strong>56400 ₽</strong>
                         </div>
                     </div>
@@ -39,19 +39,19 @@
                     <ul>
                         <li>
                             <a href="#signIn" class="openModal">
-                                <img src="assets/img/email.svg" alt="">
+                                <img src="{{asset( 'assets/img/email.svg' ) }}" alt="">
                                 Email
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="assets/img/steam.svg" alt="">
+                                <img src="{{asset( 'assets/img/steam.svg' ) }}" alt="">
                                 Steam
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="assets/img/google.svg" alt="">
+                                <img src="{{asset( 'assets/img/google.svg' ) }}" alt="">
                                 Google
                             </a>
                         </li>
@@ -63,43 +63,43 @@
                     {% if app.user and app.user.email %}
                         <li>
                             <a href={{ path('account_page') }}>
-                                <img src="assets/img/profile.svg" alt="Личный кабинет">
+                                <img src="{{asset( 'assets/img/profile.svg' ) }}" alt="Личный кабинет">
                                 Личный кабинет
                             </a>
                         </li>
                     {% endif %}
                     <li>
                         <a href={{ path('main_page') }}>
-                            <img src="assets/img/case.svg" alt="Кейсы">
+                            <img src="{{asset( 'assets/img/case.svg' ) }}" alt="Кейсы">
                             Кейсы
                         </a>
                     </li>
                     <li>
                         <a href="/">
-                            <img src="assets/img/tasks.svg" alt="Выполнять задания">
+                            <img src="{{asset( 'assets/img/tasks.svg' ) }}" alt="Выполнять задания">
                             Выполнять задания
                         </a>
                     </li>
                     <li>
                         <a href={{ path ('my_winnings') }}>
-                            <img src="assets/img/gains.svg" alt="Мои выигрыши">
+                            <img src="{{asset( 'assets/img/gains.svg' ) }}" alt="Мои выигрыши">
                             Мои выигрыши
                         </a>
                     </li>
                     <li>
                         <a href={{ path ('faq_page') }}>
-                            <img src="assets/img/faq.svg" alt="F.A.Q">F.A.Q
+                            <img src="{{asset( 'assets/img/faq.svg' ) }}" alt="F.A.Q">F.A.Q
                         </a>
                     </li>
                     <li>
                         <a href={{ path ('aboutUs_page') }}>
-                            <img src="assets/img/about.svg" alt="О нас">
+                            <img src="{{asset( 'assets/img/about.svg' ) }}" alt="О нас">
                             О нас
                         </a>
                     </li>
                     <li>
                         <a href="/">
-                            <img src="assets/img/bonus.svg" alt="Бонусы">
+                            <img src="{{asset( 'assets/img/bonus.svg' ) }}" alt="Бонусы">
                             Бонусы
                         </a>
                     </li>
@@ -108,7 +108,7 @@
         </header>
         <footer>
             <div class="footerLogo">
-                <img src="assets/img/logo.png" alt="jackpot">
+                <img src="{{asset( 'assets/img/logo.png' ) }}" alt="jackpot">
             </div>
             <div class="copyright">
                 <h4>mr.simple44</h4>

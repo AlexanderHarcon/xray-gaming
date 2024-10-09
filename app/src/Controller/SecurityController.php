@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CSCaseRepository;
 use App\Repository\ProductRepository;
 use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,13 +13,11 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    private $userService;
-    private ProductRepository $productRepository;
+    private CSCaseRepository $cscaseRepository;
 
-    public function __construct(UserService $userService, ProductRepository $productRepository)
+    public function __construct( cscaseRepository $cscaseRepository)
     {
-        $this->userService       = $userService;
-        $this->productRepository = $productRepository;
+        $this->cscaseRepository = $cscaseRepository;
     }
 
     #[Route(path: '/login', name: 'app_login')]
@@ -29,11 +28,11 @@ class SecurityController extends AbstractController
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        $products     = $this->productRepository->findAll();
+        $products     = $this->cscaseRepository->findAll();
 
         $productsMap = [];
         foreach ($products as $product) {
-            $category                 = $product->getCategoryID()->getName();
+            $category                 = $product->getCategory()->getName();
             $productsMap[$category][] = [
                 'id' => $product->getId(),
                 'name' => $product->getName(),

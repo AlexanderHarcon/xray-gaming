@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Controller;
 
-use App\Repository\ProductRepository;
+use App\Repository\CSCaseRepository;
 use App\Service\UserService;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,29 +17,29 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class MainPageController extends AbstractController
 {
     private $userService;
-    private ProductRepository $productRepository;
+    private CSCaseRepository $CSCaseRepository;
 
-    public function __construct(UserService $userService, ProductRepository $productRepository)
+    public function __construct(UserService $userService, CSCaseRepository $caseRepository)
     {
-        $this->userService       = $userService;
-        $this->productRepository = $productRepository;
+        $this->userService      = $userService;
+        $this->CSCaseRepository = $caseRepository;
     }
 
     #[Route('/', name: 'main_page')]
     public function index(): Response
     {
-        $user        = $this->getUser();
-        $username    = $this->userService->prepareUsername($user);
-        $products    = $this->productRepository->findAll();
+        $user     = $this->getUser();
+        $username = $this->userService->prepareUsername($user);
+        $cases    = $this->CSCaseRepository->findAll();
 
-        $productsMap = [];
-        foreach ($products as $product) {
-            $category                 = $product->getCategoryID()->getName();
-            $productsMap[$category][] = [
-                'id' => $product->getId(),
-                'name' => $product->getName(),
-                'imagePath' => $product->getImagePath(),
-                'price' => $product->getPrice(),
+        $casesMap = [];
+        foreach ($cases as $case) {
+            $category              = $case->getCategory()->getName();
+            $casesMap[$category][] = [
+                'id' => $case->getId(),
+                'name' => $case->getName(),
+                'imagePath' => $case->getImagePath(),
+                'price' => $case->getPrice(),
             ];
         }
 
@@ -49,7 +49,7 @@ class MainPageController extends AbstractController
                 'last_username' => '',
                 'error' => null,
                 'username' => $username,
-                'productsMap' => $productsMap,
+                'productsMap' => $casesMap,
             ],
         );
     }

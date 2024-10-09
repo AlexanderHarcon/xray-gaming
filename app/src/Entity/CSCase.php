@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
+use App\Repository\CSCaseRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CategoryRepository::class)]
-class Category
+#[ORM\Entity(repositoryClass: CSCaseRepository::class)]
+class CSCase
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,17 +18,21 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $imagePath = null;
+
+    #[ORM\ManyToOne(inversedBy: 'cases')]
+    #[ORM\JoinColumn(nullable: false)]
+    private Category $category;
+
+    #[ORM\Column(length: 255)]
+    private ?string $price = null;
+
     /**
      * @var Collection<int, Product>
      */
-    #[ORM\OneToMany(targetEntity: Product::class, mappedBy: 'categoryID')]
+    #[ORM\OneToMany(targetEntity: Product::class, mappedBy: 'cSCase')]
     private Collection $products;
-
-    /**
-     * @var Collection<int, CSCase>
-     */
-    #[ORM\OneToMany(targetEntity: CSCase::class, mappedBy: 'categoryID')]
-    private Collection $cases;
 
     public function __construct()
     {
@@ -52,12 +56,38 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection<int, CSCase>
-     */
-    public function getCases(): Collection
+    public function getImagePath(): ?string
     {
-        return $this->cases;
+        return $this->imagePath;
+    }
+
+    public function setImagePath(string $imagePath): static
+    {
+        $this->imagePath = $imagePath;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): static
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
     }
 
     /**
@@ -72,7 +102,7 @@ class Category
     {
         if (!$this->products->contains($product)) {
             $this->products->add($product);
-            $product->setCategoryID($this);
+            $product->setCSCase($this);
         }
 
         return $this;
@@ -82,8 +112,8 @@ class Category
     {
         if ($this->products->removeElement($product)) {
             // set the owning side to null (unless already changed)
-            if ($product->getCategoryID() === $this) {
-                $product->setCategoryID(null);
+            if ($product->getCSCase() === $this) {
+                $product->setCSCase(null);
             }
         }
 

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -30,6 +32,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    /**
+     * @var Collection<int, Winning>
+     */
+    #[ORM\OneToMany(targetEntity: Winning::class, mappedBy: 'userID')]
+    private Collection $winnings;
+
+    public function __construct()
+    {
+        $this->winnings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -105,4 +118,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+    /**
+     * @return Collection<int, Winning>
+     */
+    public function getWinnings(): Collection
+    {
+        return $this->winnings;
+    }
+
+    public function addWinning(Winning $winning): static
+    {
+        if (!$this->winnings->contains($winning)) {
+            $this->winnings->add($winning);
+            $winning->setUserID($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWinning(Winning $winning): static
+    {
+        if ($this->winnings->removeElement($winning)) {
+            // set the owning side to null (unless already changed)
+            if ($winning->getUserID() === $this) {
+                $winning->setUserID(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

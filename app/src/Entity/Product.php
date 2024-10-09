@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -19,12 +21,25 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $imagePath = null;
 
-    #[ORM\ManyToOne(inversedBy: 'products')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Category $categoryID = null;
-
     #[ORM\Column]
     private ?float $price = null;
+
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?CSCase $cSCase = null;
+
+    /**
+     * @var Collection<int, Winning>
+     */
+    #[ORM\OneToMany(targetEntity: Winning::class, mappedBy: 'productID')]
+    private Collection $winnings;
+
+    public function __construct()
+    {
+        $this->winnings = new ArrayCollection();
+    }
+
+
 
     public function getId(): ?int
     {
@@ -55,17 +70,6 @@ class Product
         return $this;
     }
 
-    public function getCategoryID(): ?Category
-    {
-        return $this->categoryID;
-    }
-
-    public function setCategoryID(?Category $categoryID): static
-    {
-        $this->categoryID = $categoryID;
-
-        return $this;
-    }
 
     public function getPrice(): ?float
     {
@@ -78,4 +82,48 @@ class Product
 
         return $this;
     }
+
+    public function getCSCase(): ?CSCase
+    {
+        return $this->cSCase;
+    }
+
+    public function setCSCase(?CSCase $cSCase): static
+    {
+        $this->cSCase = $cSCase;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Winning>
+     */
+    public function getWinnings(): Collection
+    {
+        return $this->winnings;
+    }
+
+    public function addWinning(Winning $winning): static
+    {
+        if (!$this->winnings->contains($winning)) {
+            $this->winnings->add($winning);
+            $winning->setProductID($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWinning(Winning $winning): static
+    {
+        if ($this->winnings->removeElement($winning)) {
+            // set the owning side to null (unless already changed)
+            if ($winning->getProductID() === $this) {
+                $winning->setProductID(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

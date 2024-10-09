@@ -28,6 +28,6 @@ class FaqController extends AbstractController
         $user     = $this->getUser();
         $username = $this->userService->prepareUsername($user);
 
-        return $this->render('faq.html.twig', ['error' => $error,'last_username' => $lastUsername,]);
+        return $this->render('faq.html.twig', ['username' => $username,'error' => $error,'last_username' => $lastUsername,]);
     }
 }
